@@ -1,0 +1,19 @@
+.topbar{
+    width: 60%;
+    background-color: #264653;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    padding:1rem;
+
+    .accountname {
+        display:inline-block;
+
+    }
+
+    .accountbalance {
+        display:inline-block;
+        float:right;
+    }
+}

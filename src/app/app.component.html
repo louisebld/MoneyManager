@@ -1,8 +1,7 @@
 <div class="all">
 
 <app-topbar></app-topbar>
-<app-depense [depense]="myDepense"></app-depense>
-
+<app-depense *ngFor="let d of depenses" [depense]="d"></app-depense>
 </div>
 
 <style>

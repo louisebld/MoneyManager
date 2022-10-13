@@ -1,9 +1,9 @@
 .topbar{
     display: flex;
-    // justify-content: vertifal-center;
+    // justify-content: vertical-center;
 
     .toolbar{
-        width: 60%;
+        width: 100%;
         background-color: #264653;
         color: #fff;
         font-size: 20px;
@@ -21,4 +21,6 @@
             float:right;
         }
     }
+
+    
 }

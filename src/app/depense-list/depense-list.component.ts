@@ -13,7 +13,7 @@ export class depenseListComponent implements OnInit {
   depenses!: Depense[];
 
   ngOnInit(): void {
-    this.depenses = this.depensesService.depenses;
+    this.depenses = this.depensesService.getAllDepenses();
   }
 
 }

@@ -1,6 +1,6 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './signin/signin.component';
 import { DepenseComponent } from './depense/depense.component';
@@ -8,7 +8,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import { depenseListComponent } from './depense-list/depense-list.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {AppRoutingModule} from './app-routing.module';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -37,7 +37,9 @@ import { AdddepenseComponent } from './adddepense/adddepense.component';
     MatIconModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}

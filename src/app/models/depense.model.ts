@@ -1,6 +1,7 @@
 export class Depense{
 
-    constructor(public id: number,
+    constructor(
+        public id: number,
         public title: string, 
         public date: Date, 
         public montant: number, 

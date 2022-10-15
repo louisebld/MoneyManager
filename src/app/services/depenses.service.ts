@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import {Injectable} from '@angular/core'
+import { Observable } from 'rxjs';
 import {Depense} from '../models/depense.model'
 @Injectable({
     providedIn: 'root' // explique à angular que ce service doit être enregistré à la racine de l'app
@@ -16,8 +17,8 @@ export class DepensesService {
         new Depense(3, 'Sac à main', new Date(), 30, 'Bagages'),
     ];
 
-    getAllDepenses(): Depense[]{
-        return this.depenses;
+    getAllDepenses(): Observable<Depense[]>{
+        return this.http.get<Depense[]>('http://localhost:8080/depenses/read');
     }
 
     getDepenseById(id: number): Depense | undefined{

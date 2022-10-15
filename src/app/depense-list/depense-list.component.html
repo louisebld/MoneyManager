@@ -2,6 +2,6 @@
     <div class="all">
     
     <app-topbar></app-topbar>
-    <app-depense class="depenses" *ngFor="let d of depenses" [depense]="d"></app-depense>
+    <app-depense class="depenses" *ngFor="let d of depenses$ | async" [depense]="d"></app-depense>
     </div>
     </div>

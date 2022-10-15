@@ -1,14 +1,6 @@
 <h2>Ajouter une nouvelle dépense</h2>
 
-<mat-form-field appearance="fill">
-    <mat-label>Input</mat-label>
-    <input matInput>
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Select</mat-label>
-
-  </mat-form-field>
-  <mat-form-field appearance="fill">
-    <mat-label>Textarea</mat-label>
-    <textarea matInput></textarea>
-  </mat-form-field>
+<form #emailForm="ngForm" (ngSubmit)="onSubmitForm(emailForm)">
+  <input type="input" id="emailInput" [(ngModel)]="userEmail" name="userEmail">
+  <button type="submit">OK!</button>
+</form>

@@ -19,6 +19,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {registerLocaleData} from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { AdddepenseComponent } from './adddepense/adddepense.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { AdddepenseComponent } from './adddepense/adddepense.component';
     MatInputModule,
     MatFormFieldModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'fr-FR'}

@@ -4,8 +4,11 @@
         <div class="accountname">Louise's</div>
         <div class="accountbalance">0€</div>
     </div>
-    <button class="but" mat-mini-fab (click)="openDialog()" color="primary">
+    <a [routerLink]="['/adddepense']">
+    <button class="but" (click)="goAddDepenses()" mat-mini-fab color="primary">
         <mat-icon>add</mat-icon>
     </button>
+    </a>
+    <!-- (click)="openDialog()" -->
 </div>
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
+import { map, Observable } from 'rxjs';
+import { Depense } from '../models/depense.model';
 
 @Component({
   selector: 'app-adddepense',
@@ -9,13 +11,35 @@ import { NgForm } from '@angular/forms';
 export class AdddepenseComponent implements OnInit {
 
   userEmail!: string;
+  nameDepense!: string;
+  depenseForm!:FormGroup;
+  categories! : string[];
 
-  constructor() { }
+  depensePreview$! : Observable<Depense>;
+  
+
+  constructor(private formBuilder : FormBuilder) { }
 
   ngOnInit(): void {
+    this.depenseForm = this.formBuilder.group({
+      name: [null],
+      date: [null],
+      prix: [null],
+      categorie: [null]
+    })
+    this.categories = ['Alimentation', 'Transport', 'Loisir', 'Autre'];
+    this.depensePreview$ = this.depenseForm.valueChanges.pipe(
+      map((formValue => ({
+        ...formValue,
+        name: formValue.name,
+        date: formValue.date,
+        prix: formValue.prix,
+        categorie: formValue.categorie
+      }))
+    ));
   }
 
-  onSubmitForm(form : NgForm) : void{
-    console.log(form.value);
+  onSubmitForm() : void{
+    console.log(this.depenseForm.value);
   }
 }

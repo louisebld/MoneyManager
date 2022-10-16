@@ -18,7 +18,11 @@ export class DepensesService {
     ];
 
     getAllDepenses(): Observable<Depense[]>{
-        return this.http.get<Depense[]>('http://localhost:8080/depenses/read');
+        return this.http.get<Depense[]>('http://localhost:8080/api/depense/read');
+        
+        // return new Observable<Depense[]>(observer => {
+        //     observer.next(this.depenses);
+        // });
     }
 
     getDepenseById(id: number): Depense | undefined{

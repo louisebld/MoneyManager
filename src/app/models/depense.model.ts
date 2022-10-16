@@ -2,9 +2,9 @@ export class Depense{
 
     constructor(
         public id: number,
-        public title: string, 
+        public name: string, 
         public date: Date, 
-        public montant: number, 
+        public prix: number, 
         public categorie: string){
     }
 }

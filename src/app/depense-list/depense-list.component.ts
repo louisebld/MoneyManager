@@ -27,6 +27,7 @@ export class depenseListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.destroy$.next(true);  }
+    // this.destroy$.next(true);  
+  }
 
 }

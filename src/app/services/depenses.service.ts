@@ -28,4 +28,9 @@ export class DepensesService {
     getDepenseById(id: number): Depense | undefined{
         return this.depenses.find(depense => depense.id == id);
     }
+
+    addDepense(formValue : {name: string, date: Date, prix: number, categorie: string}) : Observable<any>{ {
+        return this.http.post('http://localhost:8080/api/depense/create', formValue);
+        }
+    }
 }

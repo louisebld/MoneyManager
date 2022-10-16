@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm } from '@angular/forms';
-import { map, Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { map, Observable, tap } from 'rxjs';
 import { Depense } from '../models/depense.model';
+import { DepensesService } from '../services/depenses.service';
 
 @Component({
   selector: 'app-adddepense',
@@ -18,7 +20,8 @@ export class AdddepenseComponent implements OnInit {
   depensePreview$! : Observable<Depense>;
   
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private depenseService : DepensesService,
+    private router : Router) { }
 
   ngOnInit(): void {
     this.depenseForm = this.formBuilder.group({
@@ -39,7 +42,10 @@ export class AdddepenseComponent implements OnInit {
     ));
   }
 
-  onSubmitForm() : void{
+  onSubmitForm(){
+    this.depenseService.addDepense(this.depenseForm.value).pipe(
+      tap(() => this.router.navigateByUrl("/depenses"))
+    ).subscribe();
     console.log(this.depenseForm.value);
   }
 }
